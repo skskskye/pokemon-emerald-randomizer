@@ -42,6 +42,8 @@
 
 #pokemon rom 
 *.gba
+*.sav
+*.ss1
 
 #addresses
 addresses
