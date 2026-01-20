@@ -44,4 +44,4 @@
 *.gba
 
 #addresses
-./addresses
+addresses
