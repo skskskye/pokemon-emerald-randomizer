@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -Wall -g -std=c++23 -MMD -MP
-TARGET = main
+TARGET = randomizer
 
 # Find all .cpp files
 SRCS = $(wildcard *.cpp)

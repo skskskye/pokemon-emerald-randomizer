@@ -2,14 +2,16 @@
 #include <cstdint>
 #include <iostream>
 
+std::string gameTitle = "42 50 45 45"; //BPEE <-- the game
+
 FileIO::FileIO(const std::string& file)
     : game(file, std::ios::out | std::ios::in | std::ios::binary){
         //validate the game file
     if(!game){
-        std::cerr << "Error, perhaps the wrong file?" << std::endl;
+        std::cerr << "no valid file!" << std::endl;
     }
 
-    //do more validation later once finished :)
+    
 }
 
 FileIO::~FileIO(){

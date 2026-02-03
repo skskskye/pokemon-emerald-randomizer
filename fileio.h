@@ -1,11 +1,9 @@
 #include <fstream>
 
-
-
 class FileIO{
 
     private:
-    
+        //TODO
     public:
         std::fstream game;
         FileIO(const std::string& file);

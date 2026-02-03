@@ -3,7 +3,8 @@
 #include "randomize.h"
 #include "fileio.h"
 
-int main(){
+int main() {
+    std::srand(static_cast<unsigned>(std::time(nullptr)));
     const char* filename = "emerald-test.gba"; // the game file name [temp for now]     
     FileIO file(filename);
 
