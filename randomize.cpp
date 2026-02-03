@@ -1,14 +1,18 @@
 #include "randomize.h"
+#include "pokemon.h"
 #include "fileio.h"
 #include <iostream>
 #include <cstdint>
 #include <ctime>
 
-long starterOffset = 0x5B1DF8;
+//all relevant offsets
+const uint32_t starterOffset = 0x5B1DF8;
 
 uint16_t getRandomNumber(int low, int high){    
     // generate a random number
     uint16_t randomNum = rand() % (low-high) + high;
+
+
     
     return randomNum;
 }

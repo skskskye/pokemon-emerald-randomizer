@@ -1,15 +1,17 @@
 #include <string>
 #include <iostream>
+#include <cstdint>
 
 class Pokemon
 {
     private: 
-        int hex[1];
+        std::string name; //dont know if i will have this included
+        u_int16_t hex;
         int minLevel;
         int maxLevel;
     public:
-        Pokemon(char* name, int min, int max);
+        Pokemon(uint16_t hex ,std::string name, int min, int max);
         int getMinLevel();
         int getMaxLevel();
-        int* getHex();
+        uint16_t getHex();
 };
