@@ -1,9 +1,11 @@
 #include "pokemon.h"
+#include "species.h"
 #include "fileio.h"
 #include <iostream>
 #include <cstdint>
 #include <random>
 #include <array>
+
 
 //all relevant offsets
 const uint32_t starterOffset = 0x5B1DF8;
@@ -40,10 +42,13 @@ uint16_t getRandomPokemon() {
         pokemon = getRandomNumber(1, 411); 
     }
 
+    
+
     return pokemon;
 }
 
-void randomize_starters(FileIO& game){
+std::vector<Pokemon> randomizeStarters(FileIO& game) {
+    std::vector<Pokemon> pokemons; 
     uint32_t currnet = starterOffset;
     for (uint32_t i = 0; i < 3; i++) {
         std::cout << i << std::endl;
@@ -53,6 +58,20 @@ void randomize_starters(FileIO& game){
         SOMEHOW WITH THE POWER OF MAGIC PATCH THIS BUG OUT (??????????? ugh this will be not fun LOL)
         this will have to be fixed at the end of the project though.... this issue isnt to big of a deal since afaik only mew/deyoxes have this issue 
         */
-        game.writeToFile((currnet + (i * 2)) , getRandomPokemon());
+        uint16_t randomPokemon = getRandomPokemon();
+        
+        game.writeToFile((currnet + (i * 2)) , randomPokemon);
+        
+        Pokemon p(randomPokemon, 3, 3);
+        pokemons.push_back(p);
     }
+
+    return pokemons;
+}
+
+void randomizeRoutes () { 
+    // TODO: randomize routes
+    
+    return;
+
 }

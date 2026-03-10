@@ -2,13 +2,18 @@
 #include <string.h>
 #include <cstdint>
 
-Pokemon::Pokemon(uint16_t hexId, std::string name="", int min=0, int max=0){
-    hex = hexId;
-    this->name = name; //ZERO clue if i want to actually have a name thing for now
-    minLevel = min;
-    maxLevel = max;
+Pokemon::Pokemon(uint16_t sp, int min=0, int max=0)
+    : species(static_cast<Species>(sp)), minLevel(min), maxLevel(max)
+{}
+
+int Pokemon::getMinLevel() { 
+    return this->minLevel;
 }
 
-uint16_t Pokemon::getHex(){
-    return hex;
+int Pokemon::getMaxLevel() { 
+    return this->maxLevel;
+}
+
+Species Pokemon::getSpecie() { 
+    return this->species;
 }
