@@ -1,4 +1,5 @@
 #include <fstream>
+#include <cstdint>
 
 class FileIO{
 
@@ -10,7 +11,7 @@ class FileIO{
         ~FileIO();
 
         bool validate();
-        long* readByte(long byteToRead, int amount=1);
+        uint8_t* readByte(uint32_t byteToRead, int amount=1);
         
         void writeToFile(long offsetToWrite, uint16_t value);
         void writeBytesToFile(long* bytesToWriteTo, uint32_t* byteToRead, long length);
