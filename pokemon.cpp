@@ -17,3 +17,4 @@ int Pokemon::getMaxLevel() {
 Species Pokemon::getSpecie() { 
     return this->species;
 }
+

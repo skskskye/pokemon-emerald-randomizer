@@ -18,4 +18,5 @@ class Pokemon
         int getMinLevel();
         int getMaxLevel();
         Species getSpecie();
+        std::string speciesToText();
 };

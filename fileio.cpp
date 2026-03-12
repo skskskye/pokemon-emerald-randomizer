@@ -27,8 +27,6 @@ FileIO::FileIO(const std::string& file)
     }else{
         std::cout << "correct game!... randomizing" << std::endl;
     }
-
-
 }
 
 FileIO::~FileIO(){
@@ -44,11 +42,15 @@ void FileIO::writeToFile(long offsetToWrite, uint16_t offset){
 
 
 uint8_t* FileIO::readByte(uint32_t byteToRead, int amount){
-    uint8_t* bytes = new uint8_t[amount];
-    game.seekg(byteToRead);
+    uint8_t* bytes = new uint8_t[amount]; //memory leak fix this later lol (change to vector probably)
+    game.seekg(byteToRead, std::ios::beg);
     
     
     game.read(reinterpret_cast<char*>(bytes), amount);
     return bytes;
+}
+
+void FileIO::rewindToStart() { 
+    game.seekg(0, std::ios::beg);
 }
 

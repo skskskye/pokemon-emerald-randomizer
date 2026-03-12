@@ -17,4 +17,6 @@ class FileIO{
         
         void writeToFile(long offsetToWrite, uint16_t value);
         void writeBytesToFile(long* bytesToWriteTo, uint32_t* byteToRead, long length);
+
+        void rewindToStart();
 };
